@@ -13,38 +13,35 @@ use function Eaja20\Functions\{
     destroySession,
     redirectTo,
     renderView,
-    // renderTwigView,
     sendResponse,
     url
 };
-
-// use Eaja20\Dice\DiceHand;
 
 /**
  * Class Game.
  */
 class Game
 {
-    private function welcome()
+    private function welcome(): array
     {
         $data = [
             "title" => "21",
             "header" => "Game 21",
             "message" => ("Welcome to the dice game 21! 
                 You can maximum bet half of your bitcoins."),
-            "playerBitcoin" => $_SESSION["playerBitcoin"]
+            "playerBitcoin" => $_SESSION["playerBitcoin"],
+            "pageToRender" => "layout/dice-welcome.php"
         ];
-
-        $body = renderView("layout/dice-welcome.php", $data);
-        sendResponse($body);
+        return $data;
     }
 
-    private function playerTurn()
+    private function playerTurn(): array
     {
         $data = [
             "title" => "21",
             "header" => "Player's round",
             "message" => "You threw:",
+            "pageToRender" => "layout/dice.php"
         ];
 
         $diceHand = new DiceHand($_SESSION["numDice"]); // start game with 1-2 dice
@@ -65,11 +62,10 @@ class Game
             $data = [
                 "title" => "21",
                 "header" => "Congratulations!",
-                "message" => "You got 21, now it's the computers turn."
+                "message" => "You got 21, now it's the computers turn.",
+                "pageToRender" => "layout/dice-between.php"
             ];
-            $body = renderView("layout/dice-between.php", $data);
-            sendResponse($body);
-            return;
+            return $data;
         }
 
         // check if over 21: game over
@@ -80,17 +76,13 @@ class Game
                 "message" => "You got over 21, the computer wins this round."
             ];
 
-            $this->showResult("computer", $data);
-            return;
+            return $this->showResult("computer", $data);
         }
 
-        // else
-
-        $body = renderView("layout/dice.php", $data);
-        sendResponse($body);
+        return $data;
     }
 
-    private function computerTurn()
+    private function computerTurn(): array
     {
         $data = [
             "title" => "21",
@@ -110,16 +102,14 @@ class Game
 
         if ($_SESSION["computerScore"] === 21) {
             $data["message"] = "The computer got 21, it won!";
-            $this->showResult("computer", $data);
-            return;
-        } else if ($_SESSION["computerScore"] > 21) {
-            $data["message"] = "You won! Computer is over 21.";
-            $this->showResult("player", $data);
-            return;
+            return $this->showResult("computer", $data);
         }
+
+        $data["message"] = "You won! Computer is over 21.";
+        return $this->showResult("player", $data);
     }
 
-    private function showResult(string $winner, array $data)
+    private function showResult(string $winner, array $data): array
     {
         if (isset($_SESSION['rounds'])) { // keep track of amount of rounds
             $_SESSION['rounds'] += 1;
@@ -154,14 +144,12 @@ class Game
         $data["computerWins"] = $_SESSION['computerWins'];
         $data["playerBitcoin"] = $_SESSION["playerBitcoin"];
         $data["computerBitcoin"] = $_SESSION["computerBitcoin"];
+        $data["pageToRender"] = "layout/dice-winner.php";
 
-        // render winner view
-        $body = renderView("layout/dice-winner.php", $data);
-        sendResponse($body);
-        return;
+        return $data;
     }
 
-    private function resetGame()
+    private function resetGame(): array
     {
         destroySession();
         // start up bitcoins accounts by start of game
@@ -169,29 +157,23 @@ class Game
             $_SESSION["playerBitcoin"] = 10;
             $_SESSION["computerBitcoin"] = 100;
         }
-        $this->welcome();
+        return $this->welcome();
     }
 
-    private function checkBet(int $bitcointBet)
+    private function checkBet(int $bitcointBet): bool
     {
-        if (intval($bitcointBet) > (0.5 * $_SESSION["playerBitcoin"])) {
-            return false;
-        }
-
-        return true;
+        return (bool) !(intval($bitcointBet) > (0.5 * $_SESSION["playerBitcoin"]));
     }
 
-    private function startGame(int $firstRound = 1)
+    private function startGame(int $firstRound = 1): array
     {
-
         // get how much the player wants to bet
         $bitcoinBet = isset($_POST['bitcoin']) ? intval(htmlentities($_POST['bitcoin'])) : null;
 
         // if not valid bet, return to welcome page again
         if (!$this->checkBet($bitcoinBet)) {
             if ($firstRound) {
-                $this->welcome();
-                return;
+                return $this->welcome();
             }
 
             $data = [
@@ -202,13 +184,11 @@ class Game
                 "playerWins" => $_SESSION['playerWins'],
                 "computerWins" => $_SESSION['computerWins'],
                 "playerBitcoin" => $_SESSION["playerBitcoin"],
-                "computerBitcoin" => $_SESSION["computerBitcoin"]
+                "computerBitcoin" => $_SESSION["computerBitcoin"],
+                "pageToRender" => "layout/dice-winner.php"
             ];
-            // render winner view
-            $body = renderView("layout/dice-winner.php", $data);
-            sendResponse($body);
 
-            return;
+            return $data;
         }
 
         // save the current bet
@@ -226,11 +206,10 @@ class Game
         $_SESSION["playerScore"] = 0;
         $_SESSION["computerScore"] = 0;
 
-        $this->playerTurn();
-        return;
+        return $this->playerTurn();
     }
 
-    public function playGame(): void
+    public function playGame(): array
     {
         // start up bitcoins accounts by start of game
         if (!isset($_SESSION["playerBitcoin"])) {
@@ -240,36 +219,31 @@ class Game
 
         // reset the game
         if (isset($_GET["reset"]) && $_GET["reset"] === "True") {
-            $this->resetGame();
-            return;
+            return $this->resetGame();
         }
 
         // start first round
         if (isset($_POST['dice'])) {
-            $this->startGame();
-            return;
+            return $this->startGame();
         }
 
         // start next round
         if (isset($_POST["nextRound"])) {
             unset($_POST["nextRound"]);
-            $this->startGame(0);
-            return;
+            return $this->startGame(0);
         }
 
         // no game in progress
         if (!isset($_SESSION['playerScore'])) {
-            $this->welcome();
-            return;
+            return $this->welcome();
         }
 
         // computer's turn
         if (isset($_GET["turn"])) {
-            $this->computerTurn();
-            return;
+            return $this->computerTurn();
         }
 
         // game in progress
-        $this->playerTurn();
+        return $this->playerTurn();
     }
 }

@@ -13,4 +13,4 @@ $message = $message ?? null;
 
 <p><?= $message ?></p>
 
-<p>DICE!!</p>
+<p>CHANGED</p>
