@@ -5,22 +5,25 @@ declare(strict_types=1);
 namespace Eaja20\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use Eaja20\Dice\Game;
+use Eaja20\Yatzy\YatzyHandler;
+use Eaja20\Dice\{
+    Dice,
+    DiceHand
+};
 
 use function Eaja20\Functions\renderView;
 
 /**
- * Controller for the dice route.
+ * Controller for the Yatzy route.
  */
-class Game21
+class Yatzy
 {
     use ControllerTrait;
 
     public function index(): ResponseInterface
     {
-        $callable = new Game();
+        $callable = new YatzyHandler();
         $data = $callable->playGame();
-
         $body = renderView($data["pageToRender"], $data);
 
         return $this->createResponse($body);

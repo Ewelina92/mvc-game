@@ -26,9 +26,9 @@ class GraphicalDice extends Dice
     /**
      * Constructor to initiate the dice with six number of sides.
      */
-    public function __construct()
+    public function __construct(int $roll = null)
     {
-        parent::__construct(self::SIDES);
+        parent::__construct(self::SIDES, $roll);
     }
 
     public function graphic(): string

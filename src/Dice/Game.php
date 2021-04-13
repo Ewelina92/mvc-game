@@ -8,6 +8,7 @@ use Eaja20\Dice\{
     Dice,
     DiceHand
 };
+use Eaja20\GameInterface\GameHandlerInterface;
 
 use function Eaja20\Functions\{
     destroySession,
@@ -20,7 +21,7 @@ use function Eaja20\Functions\{
 /**
  * Class Game.
  */
-class Game
+class Game implements GameHandlerInterface
 {
     private function welcome(): array
     {
@@ -44,7 +45,10 @@ class Game
             "pageToRender" => "layout/dice.php"
         ];
 
-        $diceHand = new DiceHand($_SESSION["numDice"]); // start game with 1-2 dice
+        $diceHand = new DiceHand(); // start game with 1-2 dice
+        for ($i = 0; $i < $_SESSION["numDice"]; $i++) {
+            $diceHand->addDice(new GraphicalDice());
+        }
         $diceHand->roll(); // roll the dice
 
         $data["diceHandRoll"] = "";
@@ -91,7 +95,10 @@ class Game
 
         $_SESSION["computerScore"] = 0;
 
-        $diceHand = new DiceHand($_SESSION["numDice"]); // start game with 1-2 dice
+        $diceHand = new DiceHand(); // start game with 1-2 dice
+        for ($i = 0; $i < $_SESSION["numDice"]; $i++) {
+            $diceHand->addDice(new GraphicalDice());
+        }
 
         while ($_SESSION["computerScore"] < 21) {
             $diceHand->roll(); // roll the dice
