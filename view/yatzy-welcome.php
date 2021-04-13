@@ -13,4 +13,6 @@ $message = $message ?? null;
 
 <p><?= $message ?></p>
 
-<p>CHANGED AGAIN</p>
+<form method=post action="yatzy">
+        <input type=submit name="startYatzy" value="Start game">
+</form>

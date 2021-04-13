@@ -12,5 +12,3 @@ $message = $message ?? null;
 ?><h1><?= $header ?></h1>
 
 <p><?= $message ?></p>
-
-<p>CHANGED AGAIN</p>

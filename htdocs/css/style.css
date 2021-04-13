@@ -1,13 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 body {
     overflow-y: scroll;
-    width: 800px;
+    max-width: 800px;
     margin: 8px auto;
     padding-left: 1em;
-    border-left: 1px solid #ccc;
+    /* border-left: 1px solid #ccc; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    color: #333;
 }
 
 main {
     min-height: 20em;
+    border-top: 1px solid #333;
+}
+
+.topNav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    background-color: #cfcfcf;
+    color: #000;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.topNav a {
+    text-decoration: none;
+}
+
+.topNav a:visited {
+    color: #000;
 }
 
 footer {
@@ -30,3 +55,28 @@ footer {
  .die {
      font-size: 32px;
  }
+
+/**
+ * Style for Yatzy
+ */
+
+.yatzy-ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.yatzy-ul ul {
+    list-style-type: none;
+}
+
+.yatzy-ul li {
+    padding-bottom: 0.2rem;
+}
+
+.yatzy-ul p {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 600;
+}

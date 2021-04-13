@@ -20,12 +20,11 @@ class Dice
 {
     private $faces;
     protected $roll;
-    //private ?int $roll = null;
 
-    public function __construct(int $faces = 6)
+    public function __construct(int $faces = 6, int $roll = null)
     {
         $this->faces = $faces;
-        $this->roll = null;
+        $this->roll = $roll;
     }
 
     public function roll(): int
@@ -35,7 +34,7 @@ class Dice
         return $this->roll;
     }
 
-    public function getLastRoll(): int
+    public function getLastRoll(): ?int
     {
         return $this->roll;
     }

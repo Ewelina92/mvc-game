@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Eaja20\Controller;
 
-use Nyholm\Psr7\Factory\Psr17Factory;
-use Nyholm\Psr7\Response;
+//use Nyholm\Psr7\Factory\Psr17Factory;
+//use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
 use function Eaja20\Functions\{
@@ -17,17 +17,14 @@ use function Eaja20\Functions\{
 /**
  * Controller for the session routes.
  */
-class Session
+class Session //extends ControllerBase
 {
+    use ControllerTrait;
+
     public function index(): ResponseInterface
     {
-        $psr17Factory = new Psr17Factory();
-
         $body = renderView("layout/session.php");
-
-        return $psr17Factory
-            ->createResponse(200)
-            ->withBody($psr17Factory->createStream($body));
+        return $this->createResponse($body);
     }
 
 
@@ -35,9 +32,9 @@ class Session
     public function destroy(): ResponseInterface
     {
         destroySession();
-
-        return (new Response())
-            ->withStatus(301)
-            ->withHeader("Location", url("/session"));
+        return $this->redirect(url("/session"));
+        // return (new Response())
+        //     ->withStatus(301)
+        //     ->withHeader("Location", url("/session"));
     }
 }

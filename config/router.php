@@ -28,6 +28,11 @@ $router->addGroup("/dice", function (RouteCollector $router) {
     $router->addRoute("POST", "", ["\Eaja20\Controller\Game21", "index"]);
 });
 
+$router->addGroup("/yatzy", function (RouteCollector $router) {
+    $router->addRoute("GET", "", ["\Eaja20\Controller\Yatzy", "index"]);
+    $router->addRoute("POST", "", ["\Eaja20\Controller\Yatzy", "index"]);
+});
+
 $router->addGroup("/session", function (RouteCollector $router) {
     $router->addRoute("GET", "", ["\Eaja20\Controller\Session", "index"]);
     $router->addRoute("GET", "/destroy", ["\Eaja20\Controller\Session", "destroy"]);

@@ -19,19 +19,15 @@ namespace Eaja20\Dice;
 class DiceHand
 {
     private $dices;
-    // private $values;
+    private $values;
     private int $sum;
     private $graphicClasses;
 
-    public function __construct(int $dices = 2)
+    public function __construct()
     {
         $this->dices = [];
         $this->graphicClasses = [];
-        // $this->values = [];
-
-        for ($i = 0; $i < $dices; $i++) {
-            $this->dices[$i] = new GraphicalDice();
-        }
+        $this->values = [];
     }
 
     public function roll(): void
@@ -40,17 +36,32 @@ class DiceHand
         $this->sum = 0;
 
         for ($i = 0; $i < $len; $i++) {
-            // $value = dices[$i]->roll();
-            // $values[i] = $value;
+            $value = $this->dices[$i]->roll();
+            $this->values[$i] = $value;
 
-            // $this->sum += $value;
-            $this->sum += $this->dices[$i]->roll();
+            $this->sum += $value;
         }
     }
 
-    public function getSum()
+    public function addDice(Dice $dice): void
+    {
+        array_push($this->dices, $dice);
+        $value = end($this->dices)->getLastRoll();
+        if ($value !== null) {
+            array_push($this->values, $value);
+            $this->sum += $value;
+        }
+    }
+
+    public function getSum(): int
     {
         return $this->sum;
+    }
+
+    public function getDiceValues(): array
+    {
+
+        return $this->values;
     }
 
     public function getLastRoll(): string
@@ -69,10 +80,8 @@ class DiceHand
     {
         $len = count($this->dices);
 
-        // $res = "";
         for ($i = 0; $i < $len; $i++) {
             $this->graphicClasses[$i] = $this->dices[$i]->graphic();
-            // $res .= $this->dices[$i]->graphic() . ", ";
         }
 
         return $this->graphicClasses;
