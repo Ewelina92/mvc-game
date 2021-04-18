@@ -12,9 +12,9 @@ use Eaja20\GameInterface\GameHandlerInterface;
 
 use function Eaja20\Functions\{
     destroySession,
-    redirectTo,
+    // redirectTo,
     renderView,
-    sendResponse,
+    // sendResponse,
     url
 };
 
