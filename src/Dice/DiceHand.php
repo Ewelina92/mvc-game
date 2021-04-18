@@ -4,15 +4,6 @@ declare(strict_types=1);
 
 namespace Eaja20\Dice;
 
-// use function Mos\Functions\{
-//     destroySession,
-//     redirectTo,
-//     renderView,
-//     renderTwigView,
-//     sendResponse,
-//     url
-// };
-
 /**
  * Class DiceHand.
  */
@@ -28,6 +19,7 @@ class DiceHand
         $this->dices = [];
         $this->graphicClasses = [];
         $this->values = [];
+        $this->sum = 0;
     }
 
     public function roll(): void
