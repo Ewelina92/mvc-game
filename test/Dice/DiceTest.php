@@ -8,14 +8,14 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Test cases for the Dice class.
+ * Test cases for the DiceHand class.
  */
 class DiceTest extends TestCase
 {
     /**
      * Try to create the Dice class.
      */
-    public function testCreateTheDiceClass()
+    public function testCreateDiceHandClass()
     {
         $dice = new Dice();
         $this->assertInstanceOf("\Eaja20\Dice\Dice", $dice);
