@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Test cases for the controller Debug.
+ * Test cases for the Dice class.
  */
 class DiceTest extends TestCase
 {
@@ -17,8 +17,8 @@ class DiceTest extends TestCase
      */
     public function testCreateTheDiceClass()
     {
-        $controller = new Dice();
-        $this->assertInstanceOf("\Eaja20\Dice\Dice", $controller);
+        $dice = new Dice();
+        $this->assertInstanceOf("\Eaja20\Dice\Dice", $dice);
     }
 
     /**
@@ -26,8 +26,8 @@ class DiceTest extends TestCase
      */
     public function testRoll()
     {
-        $controller = new Dice(6); // faces, roll
-        $res = $controller->roll();
+        $dice = new Dice(6); // faces, roll
+        $res = $dice->roll();
 
         $resultSpan = boolval($res <= 6 && $res >=1);
 
