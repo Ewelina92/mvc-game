@@ -1,4 +1,7 @@
 {
+    "name": "eaja20/game",
+    "description": "",
+    "license": "proprietary",
     "autoload": {
         "psr-4": {
             "Mos\\": "src/",

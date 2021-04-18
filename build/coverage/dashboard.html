@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /Users/ewelina/dbwebb-kurser/mvc/me/game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/style.css" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/Users/ewelina/dbwebb-kurser/mvc/me/game</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/Controller/ControllerBase.php.html#15">Eaja20\Controller\ControllerBase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Controller/Game21.php.html#15">Eaja20\Controller\Game21</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Controller/Yatzy.php.html#19">Eaja20\Controller\Yatzy</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Dice.php.html#19">Eaja20\Dice\Dice</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#19">Eaja20\Dice\DiceHand</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#24">Eaja20\Dice\Game</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/GraphicalDice.php.html#19">Eaja20\Dice\GraphicalDice</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#21">Eaja20\Yatzy\YatzyHandler</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/Dice/Game.php.html#24">Eaja20\Dice\Game</a></td><td class="text-right">1056</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#21">Eaja20\Yatzy\YatzyHandler</a></td><td class="text-right">930</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#19">Eaja20\Dice\DiceHand</a></td><td class="text-right">132</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/Controller/ControllerBase.php.html#17"><abbr title="Eaja20\Controller\ControllerBase::createResponse">createResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#119"><abbr title="Eaja20\Dice\Game::showResult">showResult</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#239"><abbr title="Eaja20\Yatzy\YatzyHandler::setupGame">setupGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#219"><abbr title="Eaja20\Yatzy\YatzyHandler::showEnding">showEnding</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#201"><abbr title="Eaja20\Yatzy\YatzyHandler::checkBonus">checkBonus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#179"><abbr title="Eaja20\Yatzy\YatzyHandler::assignPoints">assignPoints</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#133"><abbr title="Eaja20\Yatzy\YatzyHandler::getAvailableSlots">getAvailableSlots</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#107"><abbr title="Eaja20\Yatzy\YatzyHandler::checkRoll">checkRoll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#47"><abbr title="Eaja20\Yatzy\YatzyHandler::doTurn">doTurn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#28"><abbr title="Eaja20\Yatzy\YatzyHandler::welcome">welcome</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/GraphicalDice.php.html#34"><abbr title="Eaja20\Dice\GraphicalDice::graphic">graphic</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/GraphicalDice.php.html#29"><abbr title="Eaja20\Dice\GraphicalDice::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#219"><abbr title="Eaja20\Dice\Game::playGame">playGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#175"><abbr title="Eaja20\Dice\Game::startGame">startGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#170"><abbr title="Eaja20\Dice\Game::checkBet">checkBet</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#159"><abbr title="Eaja20\Dice\Game::resetGame">resetGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#89"><abbr title="Eaja20\Dice\Game::computerTurn">computerTurn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Controller/ControllerBase.php.html#28"><abbr title="Eaja20\Controller\ControllerBase::redirect">redirect</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#39"><abbr title="Eaja20\Dice\Game::playerTurn">playerTurn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#26"><abbr title="Eaja20\Dice\Game::welcome">welcome</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#79"><abbr title="Eaja20\Dice\DiceHand::graphicLastRoll">graphicLastRoll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#67"><abbr title="Eaja20\Dice\DiceHand::getLastRoll">getLastRoll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#61"><abbr title="Eaja20\Dice\DiceHand::getDiceValues">getDiceValues</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#56"><abbr title="Eaja20\Dice\DiceHand::getSum">getSum</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#46"><abbr title="Eaja20\Dice\DiceHand::addDice">addDice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#33"><abbr title="Eaja20\Dice\DiceHand::roll">roll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#26"><abbr title="Eaja20\Dice\DiceHand::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Dice.php.html#37"><abbr title="Eaja20\Dice\Dice::getLastRoll">getLastRoll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Dice.php.html#30"><abbr title="Eaja20\Dice\Dice::roll">roll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Dice/Dice.php.html#24"><abbr title="Eaja20\Dice\Dice::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Controller/Yatzy.php.html#23"><abbr title="Eaja20\Controller\Yatzy::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Controller/Game21.php.html#19"><abbr title="Eaja20\Controller\Game21::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#263"><abbr title="Eaja20\Yatzy\YatzyHandler::playGame">playGame</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/Dice/Game.php.html#219"><abbr title="Eaja20\Dice\Game::playGame">playGame</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#133"><abbr title="Eaja20\Yatzy\YatzyHandler::getAvailableSlots">getAvailableSlots</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#175"><abbr title="Eaja20\Dice\Game::startGame">startGame</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#47"><abbr title="Eaja20\Yatzy\YatzyHandler::doTurn">doTurn</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#119"><abbr title="Eaja20\Dice\Game::showResult">showResult</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#39"><abbr title="Eaja20\Dice\Game::playerTurn">playerTurn</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#263"><abbr title="Eaja20\Yatzy\YatzyHandler::playGame">playGame</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#89"><abbr title="Eaja20\Dice\Game::computerTurn">computerTurn</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#107"><abbr title="Eaja20\Yatzy\YatzyHandler::checkRoll">checkRoll</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#179"><abbr title="Eaja20\Yatzy\YatzyHandler::assignPoints">assignPoints</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#33"><abbr title="Eaja20\Dice\DiceHand::roll">roll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#46"><abbr title="Eaja20\Dice\DiceHand::addDice">addDice</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#67"><abbr title="Eaja20\Dice\DiceHand::getLastRoll">getLastRoll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Dice/DiceHand.php.html#79"><abbr title="Eaja20\Dice\DiceHand::graphicLastRoll">graphicLastRoll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Dice/Game.php.html#159"><abbr title="Eaja20\Dice\Game::resetGame">resetGame</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/Yatzy/YatzyHandler.php.html#201"><abbr title="Eaja20\Yatzy\YatzyHandler::checkBonus">checkBonus</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.6</a> using <a href="https://secure.php.net/" target="_top">PHP 7.4.16</a> with <a href="https://xdebug.org/">Xdebug 3.0.4</a> and <a href="https://phpunit.de/">PHPUnit 9.5.4</a> at Sun Apr 18 15:35:06 CEST 2021.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js" type="text/javascript"></script>
+  <script src="_js/d3.min.js" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([8,0,0,0,0,0,0,0,0,0,0,8], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([33,0,0,0,0,0,0,0,0,0,0,12], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"src\/Controller\/ControllerBase.php.html#15\">Eaja20\\Controller\\ControllerBase<\/a>"],[100,1,"<a href=\"src\/Controller\/Debug.php.html#17\">Eaja20\\Controller\\Debug<\/a>"],[100,2,"<a href=\"src\/Controller\/Error.php.html#15\">Eaja20\\Controller\\Error<\/a>"],[100,2,"<a href=\"src\/Controller\/Form.php.html#19\">Eaja20\\Controller\\Form<\/a>"],[0,1,"<a href=\"src\/Controller\/Game21.php.html#15\">Eaja20\\Controller\\Game21<\/a>"],[100,1,"<a href=\"src\/Controller\/Index.php.html#15\">Eaja20\\Controller\\Index<\/a>"],[100,1,"<a href=\"src\/Controller\/Sample.php.html#15\">Eaja20\\Controller\\Sample<\/a>"],[100,2,"<a href=\"src\/Controller\/Session.php.html#20\">Eaja20\\Controller\\Session<\/a>"],[100,1,"<a href=\"src\/Controller\/TwigView.php.html#15\">Eaja20\\Controller\\TwigView<\/a>"],[0,1,"<a href=\"src\/Controller\/Yatzy.php.html#19\">Eaja20\\Controller\\Yatzy<\/a>"],[0,3,"<a href=\"src\/Dice\/Dice.php.html#19\">Eaja20\\Dice\\Dice<\/a>"],[0,11,"<a href=\"src\/Dice\/DiceHand.php.html#19\">Eaja20\\Dice\\DiceHand<\/a>"],[0,32,"<a href=\"src\/Dice\/Game.php.html#24\">Eaja20\\Dice\\Game<\/a>"],[0,2,"<a href=\"src\/Dice\/GraphicalDice.php.html#19\">Eaja20\\Dice\\GraphicalDice<\/a>"],[0,30,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#21\">Eaja20\\Yatzy\\YatzyHandler<\/a>"],[100,2,"<a href=\"src\/Controller\/ControllerTrait.php.html#15\">Eaja20\\Controller\\ControllerTrait<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"src\/Controller\/ControllerBase.php.html#17\">Eaja20\\Controller\\ControllerBase::createResponse<\/a>"],[0,1,"<a href=\"src\/Controller\/ControllerBase.php.html#28\">Eaja20\\Controller\\ControllerBase::redirect<\/a>"],[100,1,"<a href=\"src\/Controller\/Debug.php.html#19\">Eaja20\\Controller\\Debug::__invoke<\/a>"],[100,1,"<a href=\"src\/Controller\/Error.php.html#17\">Eaja20\\Controller\\Error::do404<\/a>"],[100,1,"<a href=\"src\/Controller\/Error.php.html#35\">Eaja20\\Controller\\Error::do405<\/a>"],[100,1,"<a href=\"src\/Controller\/Form.php.html#21\">Eaja20\\Controller\\Form::view<\/a>"],[100,1,"<a href=\"src\/Controller\/Form.php.html#39\">Eaja20\\Controller\\Form::process<\/a>"],[0,1,"<a href=\"src\/Controller\/Game21.php.html#19\">Eaja20\\Controller\\Game21::index<\/a>"],[100,1,"<a href=\"src\/Controller\/Index.php.html#19\">Eaja20\\Controller\\Index::__invoke<\/a>"],[100,1,"<a href=\"src\/Controller\/Sample.php.html#17\">Eaja20\\Controller\\Sample::where<\/a>"],[100,1,"<a href=\"src\/Controller\/Session.php.html#24\">Eaja20\\Controller\\Session::index<\/a>"],[100,1,"<a href=\"src\/Controller\/Session.php.html#32\">Eaja20\\Controller\\Session::destroy<\/a>"],[100,1,"<a href=\"src\/Controller\/TwigView.php.html#17\">Eaja20\\Controller\\TwigView::__invoke<\/a>"],[0,1,"<a href=\"src\/Controller\/Yatzy.php.html#23\">Eaja20\\Controller\\Yatzy::index<\/a>"],[0,1,"<a href=\"src\/Dice\/Dice.php.html#24\">Eaja20\\Dice\\Dice::__construct<\/a>"],[0,1,"<a href=\"src\/Dice\/Dice.php.html#30\">Eaja20\\Dice\\Dice::roll<\/a>"],[0,1,"<a href=\"src\/Dice\/Dice.php.html#37\">Eaja20\\Dice\\Dice::getLastRoll<\/a>"],[0,1,"<a href=\"src\/Dice\/DiceHand.php.html#26\">Eaja20\\Dice\\DiceHand::__construct<\/a>"],[0,2,"<a href=\"src\/Dice\/DiceHand.php.html#33\">Eaja20\\Dice\\DiceHand::roll<\/a>"],[0,2,"<a href=\"src\/Dice\/DiceHand.php.html#46\">Eaja20\\Dice\\DiceHand::addDice<\/a>"],[0,1,"<a href=\"src\/Dice\/DiceHand.php.html#56\">Eaja20\\Dice\\DiceHand::getSum<\/a>"],[0,1,"<a href=\"src\/Dice\/DiceHand.php.html#61\">Eaja20\\Dice\\DiceHand::getDiceValues<\/a>"],[0,2,"<a href=\"src\/Dice\/DiceHand.php.html#67\">Eaja20\\Dice\\DiceHand::getLastRoll<\/a>"],[0,2,"<a href=\"src\/Dice\/DiceHand.php.html#79\">Eaja20\\Dice\\DiceHand::graphicLastRoll<\/a>"],[0,1,"<a href=\"src\/Dice\/Game.php.html#26\">Eaja20\\Dice\\Game::welcome<\/a>"],[0,5,"<a href=\"src\/Dice\/Game.php.html#39\">Eaja20\\Dice\\Game::playerTurn<\/a>"],[0,4,"<a href=\"src\/Dice\/Game.php.html#89\">Eaja20\\Dice\\Game::computerTurn<\/a>"],[0,5,"<a href=\"src\/Dice\/Game.php.html#119\">Eaja20\\Dice\\Game::showResult<\/a>"],[0,2,"<a href=\"src\/Dice\/Game.php.html#159\">Eaja20\\Dice\\Game::resetGame<\/a>"],[0,1,"<a href=\"src\/Dice\/Game.php.html#170\">Eaja20\\Dice\\Game::checkBet<\/a>"],[0,6,"<a href=\"src\/Dice\/Game.php.html#175\">Eaja20\\Dice\\Game::startGame<\/a>"],[0,8,"<a href=\"src\/Dice\/Game.php.html#219\">Eaja20\\Dice\\Game::playGame<\/a>"],[0,1,"<a href=\"src\/Dice\/GraphicalDice.php.html#29\">Eaja20\\Dice\\GraphicalDice::__construct<\/a>"],[0,1,"<a href=\"src\/Dice\/GraphicalDice.php.html#34\">Eaja20\\Dice\\GraphicalDice::graphic<\/a>"],[0,1,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#28\">Eaja20\\Yatzy\\YatzyHandler::welcome<\/a>"],[0,6,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#47\">Eaja20\\Yatzy\\YatzyHandler::doTurn<\/a>"],[0,4,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#107\">Eaja20\\Yatzy\\YatzyHandler::checkRoll<\/a>"],[0,7,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#133\">Eaja20\\Yatzy\\YatzyHandler::getAvailableSlots<\/a>"],[0,3,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#179\">Eaja20\\Yatzy\\YatzyHandler::assignPoints<\/a>"],[0,2,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#201\">Eaja20\\Yatzy\\YatzyHandler::checkBonus<\/a>"],[0,1,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#219\">Eaja20\\Yatzy\\YatzyHandler::showEnding<\/a>"],[0,1,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#239\">Eaja20\\Yatzy\\YatzyHandler::setupGame<\/a>"],[0,5,"<a href=\"src\/Yatzy\/YatzyHandler.php.html#263\">Eaja20\\Yatzy\\YatzyHandler::playGame<\/a>"],[100,1,"<a href=\"src\/Controller\/ControllerTrait.php.html#17\">Eaja20\\Controller\\ControllerTrait::createResponse<\/a>"],[100,1,"<a href=\"src\/Controller\/ControllerTrait.php.html#28\">Eaja20\\Controller\\ControllerTrait::redirect<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
