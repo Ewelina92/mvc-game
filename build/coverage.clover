@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1618759614">
-  <project timestamp="1618759614">
+<coverage generated="1618841048">
+  <project timestamp="1618841048">
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/config/bootstrap.php">
       <line num="10" type="stmt" count="1"/>
       <line num="11" type="stmt" count="1"/>
@@ -46,10 +46,10 @@
       <class name="Eaja20\Controller\ControllerTrait" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
       </class>
-      <line num="17" type="method" name="createResponse" visibility="protected" complexity="1" crap="1" count="2"/>
-      <line num="21" type="stmt" count="2"/>
-      <line num="24" type="stmt" count="2"/>
-      <line num="25" type="stmt" count="2"/>
+      <line num="17" type="method" name="createResponse" visibility="protected" complexity="1" crap="1" count="4"/>
+      <line num="21" type="stmt" count="4"/>
+      <line num="24" type="stmt" count="4"/>
+      <line num="25" type="stmt" count="4"/>
       <line num="28" type="method" name="redirect" visibility="protected" complexity="1" crap="1" count="1"/>
       <line num="32" type="stmt" count="1"/>
       <line num="35" type="stmt" count="1"/>
@@ -108,14 +108,14 @@
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/Controller/Game21.php">
       <class name="Eaja20\Controller\Game21" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </class>
-      <line num="19" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <metrics loc="28" ncloc="25" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+      <line num="19" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <metrics loc="28" ncloc="25" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/Controller/Index.php">
       <class name="Eaja20\Controller\Index" namespace="global">
@@ -165,14 +165,14 @@
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/Controller/Yatzy.php">
       <class name="Eaja20\Controller\Yatzy" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </class>
-      <line num="23" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <metrics loc="31" ncloc="28" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
+      <line num="23" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <metrics loc="31" ncloc="28" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/Dice/Dice.php">
       <class name="Eaja20\Dice\Dice" namespace="global">
@@ -233,15 +233,15 @@
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/Dice/Game.php">
       <class name="Eaja20\Dice\Game" namespace="global">
-        <metrics complexity="32" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="105" coveredstatements="0" elements="113" coveredelements="0"/>
+        <metrics complexity="32" methods="8" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="105" coveredstatements="20" elements="113" coveredelements="22"/>
       </class>
-      <line num="26" type="method" name="welcome" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
+      <line num="26" type="method" name="welcome" visibility="private" complexity="1" crap="1" count="3"/>
+      <line num="29" type="stmt" count="3"/>
+      <line num="30" type="stmt" count="3"/>
+      <line num="31" type="stmt" count="3"/>
+      <line num="33" type="stmt" count="3"/>
+      <line num="34" type="stmt" count="3"/>
+      <line num="36" type="stmt" count="3"/>
       <line num="39" type="method" name="playerTurn" visibility="private" complexity="5" crap="30" count="0"/>
       <line num="42" type="stmt" count="0"/>
       <line num="48" type="stmt" count="0"/>
@@ -308,13 +308,13 @@
       <line num="164" type="stmt" count="0"/>
       <line num="165" type="stmt" count="0"/>
       <line num="167" type="stmt" count="0"/>
-      <line num="170" type="method" name="checkBet" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="172" type="stmt" count="0"/>
-      <line num="175" type="method" name="startGame" visibility="private" complexity="6" crap="42" count="0"/>
-      <line num="178" type="stmt" count="0"/>
-      <line num="181" type="stmt" count="0"/>
-      <line num="182" type="stmt" count="0"/>
-      <line num="183" type="stmt" count="0"/>
+      <line num="170" type="method" name="checkBet" visibility="private" complexity="1" crap="1" count="1"/>
+      <line num="172" type="stmt" count="1"/>
+      <line num="175" type="method" name="startGame" visibility="private" complexity="6" crap="25.10" count="1"/>
+      <line num="178" type="stmt" count="1"/>
+      <line num="181" type="stmt" count="1"/>
+      <line num="182" type="stmt" count="1"/>
+      <line num="183" type="stmt" count="1"/>
       <line num="187" type="stmt" count="0"/>
       <line num="188" type="stmt" count="0"/>
       <line num="189" type="stmt" count="0"/>
@@ -332,23 +332,23 @@
       <line num="213" type="stmt" count="0"/>
       <line num="214" type="stmt" count="0"/>
       <line num="216" type="stmt" count="0"/>
-      <line num="219" type="method" name="playGame" visibility="public" complexity="8" crap="72" count="0"/>
-      <line num="222" type="stmt" count="0"/>
-      <line num="223" type="stmt" count="0"/>
-      <line num="224" type="stmt" count="0"/>
-      <line num="228" type="stmt" count="0"/>
+      <line num="219" type="method" name="playGame" visibility="public" complexity="8" crap="12.10" count="3"/>
+      <line num="222" type="stmt" count="3"/>
+      <line num="223" type="stmt" count="1"/>
+      <line num="224" type="stmt" count="1"/>
+      <line num="228" type="stmt" count="3"/>
       <line num="229" type="stmt" count="0"/>
-      <line num="233" type="stmt" count="0"/>
-      <line num="234" type="stmt" count="0"/>
-      <line num="238" type="stmt" count="0"/>
+      <line num="233" type="stmt" count="3"/>
+      <line num="234" type="stmt" count="1"/>
+      <line num="238" type="stmt" count="2"/>
       <line num="239" type="stmt" count="0"/>
       <line num="240" type="stmt" count="0"/>
-      <line num="244" type="stmt" count="0"/>
-      <line num="245" type="stmt" count="0"/>
+      <line num="244" type="stmt" count="2"/>
+      <line num="245" type="stmt" count="2"/>
       <line num="249" type="stmt" count="0"/>
       <line num="250" type="stmt" count="0"/>
       <line num="254" type="stmt" count="0"/>
-      <metrics loc="256" ncloc="221" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="105" coveredstatements="0" elements="113" coveredelements="0"/>
+      <metrics loc="256" ncloc="221" classes="1" methods="8" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="105" coveredstatements="20" elements="113" coveredelements="22"/>
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/Dice/GraphicalDice.php">
       <class name="Eaja20\Dice\GraphicalDice" namespace="global">
@@ -366,10 +366,10 @@
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/Yatzy/YatzyHandler.php">
       <class name="Eaja20\Yatzy\YatzyHandler" namespace="global">
-        <metrics complexity="30" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="95" coveredstatements="0" elements="104" coveredelements="0"/>
+        <metrics complexity="30" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="95" coveredstatements="6" elements="104" coveredelements="7"/>
       </class>
-      <line num="28" type="method" name="welcome" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="31" type="stmt" count="0"/>
+      <line num="28" type="method" name="welcome" visibility="private" complexity="1" crap="1" count="1"/>
+      <line num="31" type="stmt" count="1"/>
       <line num="47" type="method" name="doTurn" visibility="private" complexity="6" crap="42" count="0"/>
       <line num="50" type="stmt" count="0"/>
       <line num="51" type="stmt" count="0"/>
@@ -462,28 +462,28 @@
       <line num="241" type="stmt" count="0"/>
       <line num="242" type="stmt" count="0"/>
       <line num="255" type="stmt" count="0"/>
-      <line num="263" type="method" name="playGame" visibility="public" complexity="5" crap="30" count="0"/>
-      <line num="266" type="stmt" count="0"/>
+      <line num="263" type="method" name="playGame" visibility="public" complexity="5" crap="7.19" count="1"/>
+      <line num="266" type="stmt" count="1"/>
       <line num="267" type="stmt" count="0"/>
-      <line num="271" type="stmt" count="0"/>
+      <line num="271" type="stmt" count="1"/>
       <line num="272" type="stmt" count="0"/>
-      <line num="276" type="stmt" count="0"/>
+      <line num="276" type="stmt" count="1"/>
       <line num="277" type="stmt" count="0"/>
-      <line num="281" type="stmt" count="0"/>
+      <line num="281" type="stmt" count="1"/>
       <line num="282" type="stmt" count="0"/>
-      <line num="286" type="stmt" count="0"/>
-      <metrics loc="288" ncloc="240" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="95" coveredstatements="0" elements="104" coveredelements="0"/>
+      <line num="286" type="stmt" count="1"/>
+      <metrics loc="288" ncloc="240" classes="1" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="95" coveredstatements="6" elements="104" coveredelements="7"/>
     </file>
     <file name="/Users/ewelina/dbwebb-kurser/mvc/me/game/src/functions.php">
       <line num="22" type="stmt" count="2"/>
       <line num="23" type="stmt" count="2"/>
       <line num="25" type="stmt" count="2"/>
-      <line num="42" type="stmt" count="8"/>
-      <line num="44" type="stmt" count="8"/>
-      <line num="45" type="stmt" count="8"/>
-      <line num="46" type="stmt" count="8"/>
-      <line num="47" type="stmt" count="8"/>
-      <line num="49" type="stmt" count="8"/>
+      <line num="42" type="stmt" count="10"/>
+      <line num="44" type="stmt" count="10"/>
+      <line num="45" type="stmt" count="10"/>
+      <line num="46" type="stmt" count="10"/>
+      <line num="47" type="stmt" count="10"/>
+      <line num="49" type="stmt" count="10"/>
       <line num="66" type="stmt" count="2"/>
       <line num="67" type="stmt" count="2"/>
       <line num="69" type="stmt" count="2"/>
@@ -491,10 +491,10 @@
       <line num="71" type="stmt" count="1"/>
       <line num="76" type="stmt" count="1"/>
       <line num="79" type="stmt" count="2"/>
-      <line num="124" type="stmt" count="10"/>
-      <line num="136" type="stmt" count="11"/>
-      <line num="138" type="stmt" count="11"/>
-      <line num="139" type="stmt" count="11"/>
+      <line num="124" type="stmt" count="12"/>
+      <line num="136" type="stmt" count="13"/>
+      <line num="138" type="stmt" count="13"/>
+      <line num="139" type="stmt" count="13"/>
       <line num="142" type="stmt" count="1"/>
       <line num="143" type="stmt" count="1"/>
       <line num="146" type="stmt" count="1"/>
@@ -534,6 +534,6 @@
       <line num="213" type="stmt" count="2"/>
       <metrics loc="213" ncloc="139" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="57" coveredstatements="54" elements="57" coveredelements="54"/>
     </file>
-    <metrics files="19" loc="1371" ncloc="1116" classes="15" methods="43" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="388" coveredstatements="145" elements="431" coveredelements="169"/>
+    <metrics files="19" loc="1371" ncloc="1116" classes="15" methods="43" coveredmethods="29" conditionals="0" coveredconditionals="0" statements="388" coveredstatements="179" elements="431" coveredelements="208"/>
   </project>
 </coverage>

@@ -62,8 +62,8 @@ class DiceHandTest extends TestCase
 
         $result = $diceHand->getSum();
 
-        $resultSpan = boolval($result <= 12 && $result >=2);
-
+        $resultSpan = boolval($result <= 18 && $result >=3);
+        
         $this->assertIsInt($result);
         $this->assertTrue($resultSpan);
     }
