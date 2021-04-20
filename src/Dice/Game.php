@@ -23,6 +23,18 @@ use function Eaja20\Functions\{
  */
 class Game implements GameHandlerInterface
 {
+
+    private $diceHand;
+
+    public function __construct(DiceHand $diceHand = null)
+    {
+        if ($diceHand === null) {
+            $this->diceHand = new DiceHand();
+            return;
+        }
+        $this->diceHand = $diceHand;
+    }
+
     private function welcome(): array
     {
         $data = [
@@ -45,19 +57,19 @@ class Game implements GameHandlerInterface
             "pageToRender" => "layout/dice.php"
         ];
 
-        $diceHand = new DiceHand(); // start game with 1-2 dice
+        // $diceHand = new DiceHand(); // start game with 1-2 dice
         for ($i = 0; $i < $_SESSION["numDice"]; $i++) {
-            $diceHand->addDice(new GraphicalDice());
+            $this->diceHand->addDice(new GraphicalDice());
         }
-        $diceHand->roll(); // roll the dice
+        $this->diceHand->roll(); // roll the dice
 
         $data["diceHandRoll"] = "";
         // graphic representation of the dice
         for ($i = 0; $i < $_SESSION["numDice"]; $i++) {
-            $data["diceHandRoll"] .= "<span class=\"{$diceHand->graphicLastRoll()[$i]}\" ></span>";
+            $data["diceHandRoll"] .= "<span class=\"{$this->diceHand->graphicLastRoll()[$i]}\" ></span>";
         }
 
-        $data["roundSum"] = $diceHand->getSum(); // get sum of all rolls
+        $data["roundSum"] = $this->diceHand->getSum(); // get sum of all rolls
         $_SESSION["playerScore"] += $data["roundSum"]; // add to total score
         $data["totalScorePlayer"] = $_SESSION["playerScore"]; // make total score available in $data
 
@@ -95,14 +107,14 @@ class Game implements GameHandlerInterface
 
         $_SESSION["computerScore"] = 0;
 
-        $diceHand = new DiceHand(); // start game with 1-2 dice
+        // $diceHand = new DiceHand(); // start game with 1-2 dice
         for ($i = 0; $i < $_SESSION["numDice"]; $i++) {
-            $diceHand->addDice(new GraphicalDice());
+            $this->diceHand->addDice(new GraphicalDice());
         }
 
         while ($_SESSION["computerScore"] < 21) {
-            $diceHand->roll(); // roll the dice
-            $data["roundSum"] = $diceHand->getSum(); // get the sum of the round
+            $this->diceHand->roll(); // roll the dice
+            $data["roundSum"] = $this->diceHand->getSum(); // get the sum of the round
             $_SESSION["computerScore"] += $data["roundSum"];
             $data["totalScoreComputer"] = $_SESSION["computerScore"];
         }
