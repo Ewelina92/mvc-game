@@ -45,14 +45,42 @@ class GameTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame().
+     * Test the function resetGame() in playGame().
+     * @runInSeparateProcess
+     */
+    public function testResetGame()
+    {   
+        session_start();
+        $game = new Game();
+        $_GET["reset"] = "True";
+
+        $_SESSION = [
+            "playerBitcoin" => 20,
+        ];
+        
+        $result = $game->playGame(); 
+
+        $expected = [
+            "title" => "21",
+            "header" => "Game 21",
+            "message" => ("Welcome to the dice game 21! 
+                You can maximum bet half of your bitcoins."),
+            "playerBitcoin" => 10,
+            "pageToRender" => "layout/dice-welcome.php"
+        ];
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Test the function startGame() in playGame() when invalid bet first round.
      * 
      */
-    public function testStartGame()
+    public function testStartGameInvalidBet()
     {   
         $game = new Game();
         $_POST['dice'] = 1;
-        $_POST['bitcoin'] = "6"; // unvalid bet
+        $_POST['bitcoin'] = "6"; // invalid bet
 
         $result = $game->playGame();
 
@@ -69,67 +97,251 @@ class GameTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
-    // /**
-    //  * Test the function roll().
-    //  */
-    // public function testRoll()
-    // {
-    //     $diceHand = new DiceHand();
-    //     $die1 = new Dice(6, 2); // value = 2
-    //     $die2 = new Dice(6, 3); // value = 3
-    //     $die3 = new Dice(6, 4); // value = 4
+    /**
+     * Test the function startGame() in playGame() when valid bet.
+     * @runInSeparateProcess
+     * 
+     */
+    public function testStartGameValidBet()
+    {   
+        session_start();
 
-    //     $diceHand->addDice($die1);
-    //     $diceHand->addDice($die2);
-    //     $diceHand->addDice($die3);
+        $mockDiceHand = $this->createMock(DiceHand::class);
+        $mockDiceHand->method('getSum')
+             ->willReturn(10);
+        $mockDiceHand->method('graphicLastRoll')
+             ->willReturn(["die die-5", "die die-5"]);
 
-    //     $diceHand->roll();
+        $game = new Game($mockDiceHand);
 
-    //     $result = $diceHand->getSum();
+        $_SESSION = [
+            "rounds" => 1,
+            "playerBitcoin" => 10,
+            "computerBitcoin" => 100,
+        ];
 
-    //     $resultSpan = boolval($result <= 12 && $result >=2);
+        $_POST = [
+            "bitcoin" => "5", // valid bet
+            "dice" => "1"
+        ];
 
-    //     $this->assertIsInt($result);
-    //     $this->assertTrue($resultSpan);
-    // }
 
-    // /**
-    //  * Test the function getLastRoll().
-    //  */
-    // public function testGetLastRoll()
-    // {
-    //     $diceHand = new DiceHand();
-    //     $die1 = new Dice(6, 2); // value = 2
-    //     $die2 = new Dice(6, 3); // value = 3
-    //     $die3 = new Dice(6, 4); // value = 4
+        $result = $game->playGame();
 
-    //     $diceHand->addDice($die1);
-    //     $diceHand->addDice($die2);
-    //     $diceHand->addDice($die3);
+        $expected = [
+            "title" => "21",
+            "header" => "Player's round",
+            "pageToRender" => "layout/dice.php"
+        ];
 
-    //     $res = $diceHand->getLastRoll();
-    //     $exp = "2, 3, 4,  = 9";
+        $this->assertEquals($expected["header"], $result["header"]);
+        $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
+    }
 
-    //     $this->assertEquals($exp, $res);
-    // }
+    /**
+     * Test the function startGame() in playGame() when valid bet.
+     * @runInSeparateProcess
+     * 
+     */
+    public function testPlayerExactly21()
+    {   
+        session_start();
 
-    // /**
-    //  * Test the function graphicLastRoll().
-    //  */
-    // public function testGraphicLastRoll()
-    // {
-    //     $diceHand = new DiceHand();
-    //     $die1 = new GraphicalDice(2); // value = 2
-    //     $die2 = new GraphicalDice(3); // value = 3
-    //     $die3 = new GraphicalDice(4); // value = 4
+        $mockDiceHand = $this->createMock(DiceHand::class);
+        $mockDiceHand->method('getSum')
+             ->willReturn(10);
+        $mockDiceHand->method('graphicLastRoll')
+             ->willReturn(["die die-5", "die die-5"]);
 
-    //     $diceHand->addDice($die1);
-    //     $diceHand->addDice($die2);
-    //     $diceHand->addDice($die3);
+        $game = new Game($mockDiceHand);
 
-    //     $res = $diceHand->graphicLastRoll();
-    //     $exp = ["die die-2", "die die-3", "die die-4"];
+        $_SESSION = [
+            "rounds" => 2,
+            "playerBitcoin" => 10,
+            "computerBitcoin" => 100,
+            "currentBet" => 0,
+            "playerScore" => 11,
+            "computerScore" => 0,
+            "numDice" => 2,
+        ];
 
-    //     $this->assertEquals($exp, $res);
-    // }
+        $_POST = [];
+
+        $result = $game->playGame();
+
+        $expected = [
+            "title" => "21",
+            "header" => "Congratulations!",
+            "pageToRender" => "layout/dice-between.php"
+        ];
+
+        $this->assertEquals($expected["header"], $result["header"]);
+        $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
+    }
+
+    /**
+     * Test the function startGame() in playGame() when valid bet.
+     * @runInSeparateProcess
+     * 
+     */
+    public function testPlayerOver21()
+    {
+        session_start();
+
+        $mockDiceHand = $this->createMock(DiceHand::class);
+        $mockDiceHand->method('getSum')
+             ->willReturn(10);
+        $mockDiceHand->method('graphicLastRoll')
+             ->willReturn(["die die-5", "die die-5"]);
+
+        $game = new Game($mockDiceHand);
+
+        $_SESSION = [
+            "playerBitcoin" => 10,
+            "computerBitcoin" => 100,
+            "currentBet" => 0,
+            "playerScore" => 15,
+            "computerScore" => 0,
+            "numDice" => 2,
+        ];
+
+        $_POST = [];
+
+        $result = $game->playGame();
+
+        $expected = [
+            "title" => "21",
+            "header" => "You lost!",
+            "pageToRender" => "layout/dice-winner.php"
+        ];
+
+        $this->assertEquals($expected["header"], $result["header"]);
+        $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
+    }
+
+    /**
+     * Test the function startGame() in playGame() when valid bet.
+     * @runInSeparateProcess
+     * 
+     */
+    public function testComputerWin()
+    {
+        session_start();
+
+        $mockDiceHand = $this->createMock(DiceHand::class);
+        $mockDiceHand->method('getSum')
+             ->willReturn(21);
+        $mockDiceHand->method('graphicLastRoll')
+             ->willReturn(["die die-5", "die die-5"]);
+
+        $game = new Game($mockDiceHand);
+
+        $_SESSION = [
+            "playerBitcoin" => 10,
+            "computerBitcoin" => 100,
+            "currentBet" => 0,
+            "playerScore" => 15,
+            "numDice" => 2,
+        ];
+
+        $_POST = [];
+
+        $_GET = [
+            "turn" => "computer",
+        ];
+
+        $result = $game->playGame();
+
+        $expected = [
+            "title" => "21",
+            "header" => "Result this round",
+            "pageToRender" => "layout/dice-winner.php"
+        ];
+
+        $this->assertEquals(1, $_SESSION["computerWins"]);
+        $this->assertEquals($expected["header"], $result["header"]);
+        $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
+    }
+
+    /**
+     * Test the function startGame() in playGame() when valid bet.
+     * @runInSeparateProcess
+     * 
+     */
+    public function testComputerLose()
+    {
+        session_start();
+
+        $mockDiceHand = $this->createMock(DiceHand::class);
+        $mockDiceHand->method('getSum')->willReturn(25);
+        $mockDiceHand->method('graphicLastRoll')->willReturn(["die die-5", "die die-5"]);
+
+        $game = new Game($mockDiceHand);
+
+        $_SESSION = [
+            "rounds" => 1 ,
+            "computerWins" => 0,
+            "playerWins" => 0,
+            "playerBitcoin" => 10,
+            "computerBitcoin" => 100,
+            "currentBet" => 0,
+            "playerScore" => 15,
+            "numDice" => 2,
+        ];
+
+        $_POST = [];
+
+        $_GET = [
+            "turn" => "computer",
+        ];
+
+        $result = $game->playGame();
+
+        $expected = [
+            "title" => "21",
+            "header" => "Result this round",
+            "pageToRender" => "layout/dice-winner.php"
+        ];
+
+        $this->assertEquals(1, $_SESSION["playerWins"]);
+        $this->assertEquals($expected["header"], $result["header"]);
+        $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
+    }
+
+    /**
+     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * @runInSeparateProcess
+     * 
+     */
+    public function testStartGameInvalidBetAgain()
+    {   
+        session_start();
+        $game = new Game();
+
+        $_SESSION = [
+            "rounds" => 2,
+            "playerWins" => 1,
+            "computerWins" => 0,
+            "playerBitcoin" => 10,
+            "computerBitcoin" => 100,
+        ];
+
+        $_POST = [
+            "nextRound" => "next round",
+            "bitcoin" => "6", // invalid bet
+        ];
+
+
+        $result = $game->playGame();
+
+        $expected = [
+            "title" => "21",
+            "header" => "Invalid bet!",
+            "pageToRender" => "layout/dice-winner.php"
+        ];
+
+        $this->assertEquals($expected["header"], $result["header"]);
+        $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
+    }
+
 }
