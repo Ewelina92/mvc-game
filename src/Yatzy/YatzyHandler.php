@@ -20,6 +20,16 @@ use function Eaja20\Functions\{
  */
 class YatzyHandler implements GameHandlerInterface
 {
+    private $diceHand;
+
+    public function __construct(DiceHand $diceHand = null)
+    {
+        $this->diceHand = $diceHand;
+        if ($diceHand === null) {
+            $this->diceHand = new DiceHand();
+        }
+    }
+
     /**
      * Function that welcomes the user to the game when no game in progress.
      *
@@ -62,17 +72,17 @@ class YatzyHandler implements GameHandlerInterface
             "slot6" => $_SESSION["resultSlotsYatzy"][6],
         ];
 
-        $diceHand = new DiceHand();
+        // $diceHand = new DiceHand();
 
         for ($i = 0; $i < $_SESSION["diceToRollYatzy"]; $i++) {
-            $diceHand->addDice(new GraphicalDice());
+            $this->diceHand->addDice(new GraphicalDice());
         }
 
-        $diceHand->roll(); // roll dice
+        $this->diceHand->roll(); // roll dice
 
         if (isset($_SESSION["savedDiceValuesYatzy"])) {
             foreach ($_SESSION["savedDiceValuesYatzy"] as $value) {
-                $diceHand->addDice(new GraphicalDice($value));
+                $this->diceHand->addDice(new GraphicalDice($value));
             }
         }
 
@@ -84,10 +94,10 @@ class YatzyHandler implements GameHandlerInterface
         $data["diceHandRoll"] = "";
         // graphic representation of the dice
         for ($i = 0; $i < 5; $i++) {
-            $data["diceHandRoll"] .= "<span class=\"{$diceHand->graphicLastRoll()[$i]}\" ></span>";
+            $data["diceHandRoll"] .= "<span class=\"{$this->diceHand->graphicLastRoll()[$i]}\" ></span>";
         }
 
-        $diceValues = $diceHand->getDiceValues();
+        $diceValues = $this->diceHand->getDiceValues();
         $_SESSION["allValuesFromTurn"] = $diceValues;
 
         $diceValueCount = count($diceValues);

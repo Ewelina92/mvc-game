@@ -28,11 +28,10 @@ class Game implements GameHandlerInterface
 
     public function __construct(DiceHand $diceHand = null)
     {
+        $this->diceHand = $diceHand;
         if ($diceHand === null) {
             $this->diceHand = new DiceHand();
-            return;
         }
-        $this->diceHand = $diceHand;
     }
 
     private function welcome(): array
