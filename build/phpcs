@@ -1,0 +1,92 @@
+
+FILE: /Users/ewelina/dbwebb-kurser/mvc/me/game/test/Yatzy/YatzyHandlerTest.php
+-------------------------------------------------------------------------------------------
+FOUND 19 ERRORS AFFECTING 18 LINES
+-------------------------------------------------------------------------------------------
+  19 | ERROR | [x] Whitespace found at end of line
+  22 | ERROR | [x] Whitespace found at end of line
+  43 | ERROR | [x] Whitespace found at end of line
+  46 | ERROR | [x] Whitespace found at end of line
+  69 | ERROR | [x] Whitespace found at end of line
+  72 | ERROR | [x] Whitespace found at end of line
+ 110 | ERROR | [x] Whitespace found at end of line
+ 113 | ERROR | [x] Whitespace found at end of line
+ 155 | ERROR | [x] Whitespace found at end of line
+ 158 | ERROR | [x] Whitespace found at end of line
+ 201 | ERROR | [x] Whitespace found at end of line
+ 204 | ERROR | [x] Whitespace found at end of line
+ 242 | ERROR | [x] Whitespace found at end of line
+ 245 | ERROR | [x] Whitespace found at end of line
+ 284 | ERROR | [x] Whitespace found at end of line
+ 287 | ERROR | [x] Whitespace found at end of line
+ 326 | ERROR | [x] Whitespace found at end of line
+ 329 | ERROR | [x] Expected 1 newline at end of file; 0 found
+ 329 | ERROR | [x] The closing brace for the class must go on the next line after the body
+-------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 19 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------
+
+
+FILE: /Users/ewelina/dbwebb-kurser/mvc/me/game/test/Dice/GameTest.php
+-------------------------------------------------------------------------------------------
+FOUND 18 ERRORS AFFECTING 17 LINES
+-------------------------------------------------------------------------------------------
+  26 | ERROR | [x] Whitespace found at end of line
+  29 | ERROR | [x] Whitespace found at end of line
+  52 | ERROR | [x] Whitespace found at end of line
+  60 | ERROR | [x] Whitespace found at end of line
+  61 | ERROR | [x] Whitespace found at end of line
+  77 | ERROR | [x] Whitespace found at end of line
+  80 | ERROR | [x] Whitespace found at end of line
+ 103 | ERROR | [x] Whitespace found at end of line
+ 106 | ERROR | [x] Whitespace found at end of line
+ 144 | ERROR | [x] Whitespace found at end of line
+ 147 | ERROR | [x] Whitespace found at end of line
+ 185 | ERROR | [x] Whitespace found at end of line
+ 225 | ERROR | [x] Whitespace found at end of line
+ 269 | ERROR | [x] Whitespace found at end of line
+ 314 | ERROR | [x] Whitespace found at end of line
+ 317 | ERROR | [x] Whitespace found at end of line
+ 347 | ERROR | [x] Expected 1 newline at end of file; 0 found
+ 347 | ERROR | [x] The closing brace for the class must go on the next line after the body
+-------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 18 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------
+
+
+FILE: /Users/ewelina/dbwebb-kurser/mvc/me/game/test/Dice/GraphicalDiceTest.php
+------------------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+------------------------------------------------------------------------------
+ 20 | ERROR | [x] Expected at least 1 space before "="; 0 found
+ 35 | ERROR | [x] Expected 1 newline at end of file; 0 found
+------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+------------------------------------------------------------------------------
+
+
+FILE: /Users/ewelina/dbwebb-kurser/mvc/me/game/test/Dice/DiceTest.php
+----------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 32 | ERROR | [x] Expected at least 1 space after ">="; 0 found
+ 49 | ERROR | [x] Expected 1 newline at end of file; 0 found
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+
+FILE: /Users/ewelina/dbwebb-kurser/mvc/me/game/test/Dice/DiceHandTest.php
+-------------------------------------------------------------------------
+FOUND 4 ERRORS AFFECTING 4 LINES
+-------------------------------------------------------------------------
+  32 | ERROR | [x] Whitespace found at end of line
+  65 | ERROR | [x] Expected at least 1 space after ">="; 0 found
+  66 | ERROR | [x] Whitespace found at end of line
+ 110 | ERROR | [x] Expected 1 newline at end of file; 0 found
+-------------------------------------------------------------------------
+PHPCBF CAN FIX THE 4 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------
+
+Time: 2.15 secs; Memory: 8MB
+

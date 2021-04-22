@@ -139,7 +139,7 @@ class GameTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when valid bet.
+     * Test the response when player gets exactly 21.
      * @runInSeparateProcess
      * 
      */
@@ -180,7 +180,7 @@ class GameTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when valid bet.
+     * Test the response when player gets over 21.
      * @runInSeparateProcess
      * 
      */
@@ -220,7 +220,7 @@ class GameTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when valid bet.
+     * Test the response when the computer wins.
      * @runInSeparateProcess
      * 
      */
@@ -264,7 +264,7 @@ class GameTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when valid bet.
+     * est the response when the computer loses.
      * @runInSeparateProcess
      * 
      */
