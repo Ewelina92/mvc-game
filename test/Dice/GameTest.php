@@ -6,6 +6,7 @@ namespace Eaja20\Dice;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+use function Eaja20\Functions\renderView;
 
 /**
  * Test cases for the DiceHand class.
@@ -40,7 +41,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-welcome.php"
         ];
 
-        //$this->assertIsInt($result);
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected, $result);
     }
 
@@ -69,6 +72,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-welcome.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected, $result);
     }
 
@@ -93,7 +99,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-welcome.php"
         ];
 
-        //$this->assertIsInt($result);
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected, $result);
     }
 
@@ -134,6 +142,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -175,6 +186,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-between.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -215,6 +229,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-winner.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -258,6 +275,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-winner.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals(1, $_SESSION["computerWins"]);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
@@ -303,6 +323,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-winner.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals(1, $_SESSION["playerWins"]);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
@@ -340,6 +363,9 @@ class GameTest extends TestCase
             "pageToRender" => "layout/dice-winner.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }

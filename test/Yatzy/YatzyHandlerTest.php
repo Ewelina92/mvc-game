@@ -6,6 +6,7 @@ namespace Eaja20\Yatzy;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+use function Eaja20\Functions\renderView;
 
 /**
  * Test cases for the YatzyHandler class.
@@ -33,6 +34,9 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-welcome.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -59,6 +63,9 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-round.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -100,6 +107,9 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-round.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -145,6 +155,9 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-points.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -190,6 +203,9 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-points.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -232,6 +248,9 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-round.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -273,6 +292,9 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-ending.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
@@ -314,16 +336,10 @@ class YatzyHandlerTest extends TestCase
             "pageToRender" => "layout/yatzy-layout/yatzy-points.php"
         ];
 
+        renderView($result["pageToRender"], $result);
+
+        $this->assertIsArray($result);
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
-
-
-
-
-
-
-    
-
-
 }
