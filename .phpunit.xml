@@ -4,6 +4,7 @@
     <include>
         <directory suffix=".php">config</directory>
         <directory suffix=".php">src</directory>
+        <directory suffix=".php">view</directory>
     </include>
     <report>
         <clover outputFile="build/coverage.clover"/>

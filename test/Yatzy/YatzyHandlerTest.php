@@ -14,7 +14,7 @@ class YatzyHandlerTest extends TestCase
 {
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the function welcome
      * @runInSeparateProcess
      * 
      */
@@ -38,7 +38,7 @@ class YatzyHandlerTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the function startGame.
      * @runInSeparateProcess
      * 
      */
@@ -64,7 +64,7 @@ class YatzyHandlerTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the continuing game after first round.
      * @runInSeparateProcess
      * 
      */
@@ -105,7 +105,7 @@ class YatzyHandlerTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the response when all dice are saved
      * @runInSeparateProcess
      * 
      */
@@ -150,7 +150,7 @@ class YatzyHandlerTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the response when no available slot
      * @runInSeparateProcess
      * 
      */
@@ -196,7 +196,7 @@ class YatzyHandlerTest extends TestCase
 
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the assigning of point
      * @runInSeparateProcess
      * 
      */
@@ -237,7 +237,7 @@ class YatzyHandlerTest extends TestCase
     }
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the assigning of points the last time.
      * @runInSeparateProcess
      * 
      */
@@ -279,7 +279,7 @@ class YatzyHandlerTest extends TestCase
 
 
     /**
-     * Test the function startGame() in playGame() when invalid bet, not first round.
+     * Test the response when continuing after the third throw.
      * @runInSeparateProcess
      * 
      */
