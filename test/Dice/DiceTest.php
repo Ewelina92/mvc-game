@@ -29,7 +29,7 @@ class DiceTest extends TestCase
         $dice = new Dice(6); // faces, roll
         $res = $dice->roll();
 
-        $resultSpan = boolval($res <= 6 && $res >=1);
+        $resultSpan = boolval($res <= 6 && $res >= 1);
 
         $this->assertIsInt($res);
         $this->assertTrue($resultSpan);

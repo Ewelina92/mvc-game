@@ -6,6 +6,7 @@ namespace Eaja20\Yatzy;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+
 use function Eaja20\Functions\renderView;
 
 /**
@@ -17,10 +18,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the function welcome
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testWelcome()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 
@@ -44,10 +45,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the function startGame.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testStartGame()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 
@@ -73,10 +74,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the continuing game after first round.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testContinueGame()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 
@@ -117,10 +118,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the response when all dice are saved
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testAllDiceSaved()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 
@@ -165,10 +166,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the response when no available slot
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testAllDiceSavedNoAvailable()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 
@@ -214,10 +215,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the assigning of point
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testAssignPoints()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 
@@ -258,10 +259,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the assigning of points the last time.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testAssignPointsFinal()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 
@@ -303,10 +304,10 @@ class YatzyHandlerTest extends TestCase
     /**
      * Test the response when continuing after the third throw.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testContinueAfterThirdTurn()
-    {   
+    {
         session_start();
         $game = new YatzyHandler();
 

@@ -17,7 +17,7 @@ class GraphicalDiceTest extends TestCase
      */
     public function testCreateGraphicalDiceClass()
     {
-        $graphicalDice= new GraphicalDice();
+        $graphicalDice = new GraphicalDice();
         $this->assertInstanceOf("\Eaja20\Dice\GraphicalDice", $graphicalDice);
     }
 

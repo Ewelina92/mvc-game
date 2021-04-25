@@ -6,6 +6,7 @@ namespace Eaja20\Dice;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+
 use function Eaja20\Functions\renderView;
 
 /**
@@ -24,10 +25,10 @@ class GameTest extends TestCase
 
     /**
      * Test the function welcome() in playGame().
-     * 
+     *
      */
     public function testWelcome()
-    {   
+    {
         $game = new Game();
 
         $result = $game->playGame();
@@ -52,7 +53,7 @@ class GameTest extends TestCase
      * @runInSeparateProcess
      */
     public function testResetGame()
-    {   
+    {
         session_start();
         $game = new Game();
         $_GET["reset"] = "True";
@@ -60,8 +61,8 @@ class GameTest extends TestCase
         $_SESSION = [
             "playerBitcoin" => 20,
         ];
-        
-        $result = $game->playGame(); 
+
+        $result = $game->playGame();
 
         $expected = [
             "title" => "21",
@@ -80,10 +81,10 @@ class GameTest extends TestCase
 
     /**
      * Test the function startGame() in playGame() when invalid bet first round.
-     * 
+     *
      */
     public function testStartGameInvalidBet()
-    {   
+    {
         $game = new Game();
         $_POST['dice'] = 1;
         $_POST['bitcoin'] = "6"; // invalid bet
@@ -108,10 +109,10 @@ class GameTest extends TestCase
     /**
      * Test the function startGame() in playGame() when valid bet.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testStartGameValidBet()
-    {   
+    {
         session_start();
 
         $mockDiceHand = $this->createMock(DiceHand::class);
@@ -152,10 +153,10 @@ class GameTest extends TestCase
     /**
      * Test the response when player gets exactly 21.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testPlayerExactly21()
-    {   
+    {
         session_start();
 
         $mockDiceHand = $this->createMock(DiceHand::class);
@@ -196,7 +197,7 @@ class GameTest extends TestCase
     /**
      * Test the response when player gets over 21.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testPlayerOver21()
     {
@@ -239,7 +240,7 @@ class GameTest extends TestCase
     /**
      * Test the response when the computer wins.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testComputerWin()
     {
@@ -286,7 +287,7 @@ class GameTest extends TestCase
     /**
      * est the response when the computer loses.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testComputerLose()
     {
@@ -334,10 +335,10 @@ class GameTest extends TestCase
     /**
      * Test the function startGame() in playGame() when invalid bet, not first round.
      * @runInSeparateProcess
-     * 
+     *
      */
     public function testStartGameInvalidBetAgain()
-    {   
+    {
         session_start();
         $game = new Game();
 
@@ -369,5 +370,4 @@ class GameTest extends TestCase
         $this->assertEquals($expected["header"], $result["header"]);
         $this->assertEquals($expected["pageToRender"], $result["pageToRender"]);
     }
-
 }
